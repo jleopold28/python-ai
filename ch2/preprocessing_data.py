@@ -45,4 +45,13 @@ print("\nMIN MAX SCALED DATA:\n", data_scaled_minmax)
 
 ## Normalization
 # modify the values in the feature vector so that we can measure them on a common scale
-
+# L1 Normalization = LEAST ABSOLUTE DEVIATIONS - makes sure the sum of abs val = 1 in each row.
+#   more robust becuase it is resistant to outliers in the data
+#   safelty and effectively ignore outliers during calculations
+# L2 Normalization = LEAST SQUARES - makes sure the sum of squares is 1
+#   used when outlieres are important
+# Normalize Data
+data_normalized_l1 = preprocessing.normalize(input_data, norm='l1')
+data_normalized_l2 = preprocessing.normalize(input_data, norm='l2')
+print("\nL1 normalized data:\n", data_normalized_l1)
+print("\nL2 normalized data:\n", data_normalized_l2)
